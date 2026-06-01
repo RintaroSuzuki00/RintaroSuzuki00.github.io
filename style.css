@@ -305,6 +305,90 @@ footer {
 }
 
 /* ===========================
+   Presentations
+=========================== */
+.slides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.slide-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-bg);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.slide-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.slide-thumb-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.slide-thumb-link:hover .slide-thumb {
+  transform: scale(1.03);
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(37, 99, 235, 0.75);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.slide-thumb-link:hover .slide-overlay {
+  opacity: 1;
+}
+
+.slide-body {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.slide-meta {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.slide-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.slide-desc {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* ===========================
    フェードインアニメーション
 =========================== */
 .fade-in {
